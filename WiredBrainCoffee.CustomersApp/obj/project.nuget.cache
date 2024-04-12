@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "A7awPpzYsjLdVTJLpl3p7nGiqYRBdnNawajJ4/8JelIpGNERHmp8f1Jg8wX5vqqRN5oScXHkm6d5lYaLNkEy3g==",
+  "dgSpecHash": "pQsjEYcKCbm5IoXmQFRjmeBDlCUj5PKRk92kmA1mC3huPwSAzT2aXt5rht2AshM3oR8A15duLeRzXPUlJnAbTw==",
   "success": true,
   "projectFilePath": "C:\\Axxes\\Self learning\\WPF\\WiredBrainCoffee.CustomersApp\\WiredBrainCoffee.CustomersApp\\WiredBrainCoffee.CustomersApp.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\GuusDeBruyn\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\8.0.0\\microsoft.extensions.dependencyinjection.8.0.0.nupkg.sha512",
+    "C:\\Users\\GuusDeBruyn\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

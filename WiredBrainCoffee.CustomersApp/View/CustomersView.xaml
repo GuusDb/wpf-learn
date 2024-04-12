@@ -9,21 +9,29 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
         <converter:NavigationSideToGridColumnConverter x:Key="NavigationSideToGridColumnConv"/>
+        <DataTemplate x:Key="CustomerDataTemplate">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding FirstName}" FontWeight="Bold"/>
+                <TextBlock Text="{Binding LastName}" Margin="3 0 0 0"/>
+            </StackPanel>
+        </DataTemplate>
     </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="auto"/>
             <ColumnDefinition/>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
         <!-- Customer list -->
-        <Grid Grid.Column="{Binding NavigationSide, Converter={StaticResource NavigationSideToGridColumnConv}}" Background="#777">
+        <Grid Grid.Column="{Binding NavigationSide
+            , Converter={StaticResource NavigationSideToGridColumnConv}}" 
+              Background="#777" Width="260">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <StackPanel Orientation="Horizontal">
-                <Button Margin="10" Width="75" Click="ButtonAdd_Click" Background="AntiqueWhite" >
+                <Button Margin="10" Width="75" Command="{Binding AddCommand}" Background="Cornsilk" >
                     <Button.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="8"/>
@@ -34,19 +42,19 @@
                         <TextBlock Text="Add"/>
                     </StackPanel>
                 </Button>
-                <Button Content="Delete" Width="75" Margin="0 10 10 10" />
-                <Button Click="ButtonMoveNavigate_Click" Margin="0 10 10 10">
+                <Button Content="Delete" Command="{Binding DeleteCommand}" Width="75" Margin="0 10 10 10" />
+                <Button Command="{Binding MoveNavigationCommand}" Margin="0 10 10 10">
                     <Image Source="/Images/move.png" Height="18"/>
                 </Button>
             </StackPanel>
             <ListView ItemsSource="{Binding Customers}" 
                         SelectedItem="{Binding SelectedCustomer, Mode=TwoWay}"
-                        DisplayMemberPath="FirstName"
+                        ItemTemplate="{StaticResource CustomerDataTemplate}"
                         Grid.Row="1" Margin="10 0 10 10"/>
         </Grid>
 
         <!-- Customer detail -->
-        <StackPanel Margin="10" Grid.Column="1">
+        <StackPanel Margin="10" Grid.Column="1" Visibility="{Binding IsCustomerSelected, Converter={StaticResource BooleanToVisibilityConv}}">
             <Label>Firstname:</Label>
             <TextBox Text="{Binding SelectedCustomer.FirstName , 
                             Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>

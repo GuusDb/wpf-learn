@@ -23,3 +23,14 @@ C:\Axxes\Self learning\WPF\WiredBrainCoffee.CustomersApp\WiredBrainCoffee.Custom
 C:\Axxes\Self learning\WPF\WiredBrainCoffee.CustomersApp\WiredBrainCoffee.CustomersApp\obj\Debug\net8.0-windows\Controls\HeaderControl.baml
 C:\Axxes\Self learning\WPF\WiredBrainCoffee.CustomersApp\WiredBrainCoffee.CustomersApp\obj\Debug\net8.0-windows\View\CustomersView.g.cs
 C:\Axxes\Self learning\WPF\WiredBrainCoffee.CustomersApp\WiredBrainCoffee.CustomersApp\obj\Debug\net8.0-windows\View\CustomersView.baml
+C:\Axxes\Self learning\WPF\WiredBrainCoffee.CustomersApp\WiredBrainCoffee.CustomersApp\obj\Debug\net8.0-windows\WiredBrainCoffee.CustomersApp.sourcelink.json
+C:\Axxes\Self learning\WPF\WiredBrainCoffee.CustomersApp\WiredBrainCoffee.CustomersApp\obj\Debug\net8.0-windows\App.baml
+C:\Axxes\Self learning\WPF\WiredBrainCoffee.CustomersApp\WiredBrainCoffee.CustomersApp\obj\Debug\net8.0-windows\Resources\Brushes.baml
+C:\Axxes\Self learning\WPF\WiredBrainCoffee.CustomersApp\WiredBrainCoffee.CustomersApp\obj\Debug\net8.0-windows\Resources\Converters.baml
+C:\Axxes\Self learning\WPF\WiredBrainCoffee.CustomersApp\WiredBrainCoffee.CustomersApp\obj\Debug\net8.0-windows\View\ProductsView.g.cs
+C:\Axxes\Self learning\WPF\WiredBrainCoffee.CustomersApp\WiredBrainCoffee.CustomersApp\obj\Debug\net8.0-windows\View\ProductsView.baml
+C:\Axxes\Self learning\WPF\WiredBrainCoffee.CustomersApp\WiredBrainCoffee.CustomersApp\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.dll
+C:\Axxes\Self learning\WPF\WiredBrainCoffee.CustomersApp\WiredBrainCoffee.CustomersApp\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Axxes\Self learning\WPF\WiredBrainCoffee.CustomersApp\WiredBrainCoffee.CustomersApp\obj\Debug\net8.0-windows\WiredBrainCoffee.CustomersApp.csproj.AssemblyReference.cache
+C:\Axxes\Self learning\WPF\WiredBrainCoffee.CustomersApp\WiredBrainCoffee.CustomersApp\obj\Debug\net8.0-windows\WiredBra.D6EF97CD.Up2Date
+C:\Axxes\Self learning\WPF\WiredBrainCoffee.CustomersApp\WiredBrainCoffee.CustomersApp\obj\Debug\net8.0-windows\Resources\Styles.baml
