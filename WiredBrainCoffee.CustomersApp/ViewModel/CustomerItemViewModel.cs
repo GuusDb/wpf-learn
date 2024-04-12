@@ -2,9 +2,14 @@
 
 namespace WiredBrainCoffee.CustomersApp.ViewModel;
 
-public class CustomerItemViewModel(Customer model) : ViewModelBase
+public class CustomerItemViewModel : ValidationViewModelBase
 {
-    private readonly Customer _model = model;
+    private readonly Customer _model;
+
+    public CustomerItemViewModel(Customer model)
+    {
+        _model = model;
+    }
 
     public int Id => _model.Id;
 
@@ -15,6 +20,14 @@ public class CustomerItemViewModel(Customer model) : ViewModelBase
         {
             _model.FirstName = value;
             OnPropertyChanged();
+            if (string.IsNullOrEmpty(FirstName))
+            {
+                AddError("Firstname is required");
+            }
+            else
+            {
+                ClearErrors();
+            }
         }
     }
 
@@ -27,6 +40,7 @@ public class CustomerItemViewModel(Customer model) : ViewModelBase
             OnPropertyChanged();
         }
     }
+
     public bool IsDeveloper
     {
         get => _model.IsDeveloper;
@@ -36,5 +50,5 @@ public class CustomerItemViewModel(Customer model) : ViewModelBase
             OnPropertyChanged();
         }
     }
-
 }
+
