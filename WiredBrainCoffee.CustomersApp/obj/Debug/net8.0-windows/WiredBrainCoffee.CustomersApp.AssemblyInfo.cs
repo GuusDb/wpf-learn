@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WiredBrainCoffee.CustomersApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cf47c4c29a281dfcb4a27a2a31319907a5e25a02")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aff0149ddd2a4b0d08cc47a034eda8656a723ce7")]
 [assembly: System.Reflection.AssemblyProductAttribute("WiredBrainCoffee.CustomersApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WiredBrainCoffee.CustomersApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
