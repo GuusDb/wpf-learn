@@ -1,53 +1,30 @@
 ﻿using System.Collections.ObjectModel;
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using WiredBrainCoffee.CustomersApp.Command;
 using WiredBrainCoffee.CustomersApp.Data.Interfaces;
 using WiredBrainCoffee.CustomersApp.Model;
 
 namespace WiredBrainCoffee.CustomersApp.ViewModel;
 
-public class CustomersViewModel : ViewModelBase
+public partial class CustomersViewModel : ViewModelBase
 {
     private readonly ICustomerDataProvider _customerDataProvider;
-    private CustomerItemViewModel? _selectedCustomer;
 
-    private NavigationSide _NavigationSide;
-    public NavigationSide NavigationSide
-    {
-        get => _NavigationSide;
-        private set
-        {
-            if (value == _NavigationSide) return;
-            _NavigationSide = value;
-            OnPropertyChanged();
-        }
-    }
+    [ObservableProperty]
+    private NavigationSide navigationSide;
     public ObservableCollection<CustomerItemViewModel> Customers { get; set; } = new();
 
-    public CustomerItemViewModel? SelectedCustomer
-    {
-        get => _selectedCustomer;
-        set
-        {
-            if (Equals(value, _selectedCustomer)) return;
-            _selectedCustomer = value;
-            OnPropertyChanged();
-            OnPropertyChanged(nameof(IsCustomerSelected));
-            DeleteCommand.RaiseCanExecuteChanged();
-        }
-    }
+    [ObservableProperty]
+    [NotifyCanExecuteChangedFor(nameof(DeleteCommand))]
+    [NotifyPropertyChangedFor(nameof(IsCustomerSelected))]
+    private CustomerItemViewModel? _selectedCustomer;
 
     public bool IsCustomerSelected => SelectedCustomer is not null;
-
-    public DelegateCommand AddCommand { get; set; }
-    public DelegateCommand MoveNavigationCommand { get; set; }
-    public DelegateCommand DeleteCommand { get; set; }
 
     public CustomersViewModel(ICustomerDataProvider customerDataProvider)
     {
         _customerDataProvider = customerDataProvider;
-        AddCommand = new DelegateCommand(Add);
-        MoveNavigationCommand = new DelegateCommand(MoveNavigation);
-        DeleteCommand = new DelegateCommand(Delete, CanDelete);
     }
 
 
@@ -68,6 +45,7 @@ public class CustomersViewModel : ViewModelBase
         }
     }
 
+    [RelayCommand]
     private void Add(Object? parameter)
     {
         var customer = new CustomerItemViewModel(new Customer() { FirstName = "New" });
@@ -75,11 +53,16 @@ public class CustomersViewModel : ViewModelBase
         SelectedCustomer = customer;
     }
 
+    [RelayCommand]
     private void MoveNavigation(Object? parameter)
     {
         NavigationSide = NavigationSide == NavigationSide.Left ? NavigationSide.Right : NavigationSide.Left;
     }
 
+    private bool CanDelete => SelectedCustomer is not null;
+
+
+    [RelayCommand(CanExecute = nameof(CanDelete))]
     private void Delete(object? parameter)
     {
         if (SelectedCustomer is not null)
@@ -88,10 +71,6 @@ public class CustomersViewModel : ViewModelBase
             SelectedCustomer = null;
         }
     }
-
-    private bool CanDelete(object? parameter) => SelectedCustomer is not null;
-
-
 }
 
 public enum NavigationSide
